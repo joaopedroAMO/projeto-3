@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-btn, .register-btn, .back-btn {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .google-btn {
+      background-color: #4285f4;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container" id="choice-container">
+    <h2>O que você gostaria de fazer?</h2>
+    <button class="login-btn" onclick="showLoginForm()">Login</button>
+    <button class="register-btn" onclick="showRegisterForm()">Registrar-se</button>
+  </div>
+
+  <div class="login-container hidden" id="login-container">
+    <h2>Login</h2>
+    <button class="back-btn" onclick="showChoiceForm()">Voltar</button>
+    <button class="google-btn" onclick="loginWithGoogle()">Login com Google</button>
+    <hr>
+    <div class="input-group">
+      <label for="username">Usuário:</label>
+      <input type="text" id="username" placeholder="Digite seu usuário" required>
+    </div>
+    <div class="input-group">
+      <label for="password">Senha:</label>
+      <input type="password" id="password" placeholder="Digite sua senha" required>
+    </div>
+    <button class="login-btn" onclick="login()">Entrar</button>
+  </div>
+
+  <div class="login-container hidden" id="register-container">
+    <h2>Registrar-se</h2>
+    <button class="back-btn" onclick="showChoiceForm()">Voltar</button>
+    <div class="input-group">
+      <label for="newUsername">Novo Usuário:</label>
+      <input type="text" id="newUsername" placeholder="Digite um novo usuário">
+    </div>
+    <div class="input-group">
+      <label for="newPassword">Nova Senha:</label>
+      <input type="password" id="newPassword" placeholder="Digite uma nova senha">
+    </div>
+    <button class="google-btn" onclick="registerWithGoogle()">Conectar-se com Google</button>
+    <button class="register-btn" onclick="register()">Registrar</button>
+  </div>
+
+  <script>
+    // Simulação de um armazenamento local para manter os dados de registro
+    var registeredUsers = [];
+
+    function showLoginForm() {
+      document.getElementById('choice-container').classList.add('hidden');
+      document.getElementById('login-container').classList.remove('hidden');
+      document.getElementById('register-container').classList.add('hidden');
+    }
+
+    function showRegisterForm() {
+      document.getElementById('choice-container').classList.add('hidden');
+      document.getElementById('register-container').classList.remove('hidden');
+      document.getElementById('login-container').classList.add('hidden');
+    }
+
+    function showChoiceForm() {
+      document.getElementById('login-container').classList.add('hidden');
+      document.getElementById('register-container').classList.add('hidden');
+      document.getElementById('choice-container').classList.remove('hidden');
+    }
+
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Adicione a lógica de autenticação aqui
+      var user = registeredUsers.find(u => u.username === username && u.password === password);
+
+      if (user) {
+        alert('Login bem-sucedido!');
+      } else {
+        alert('Usuário ou senha incorretos. Tente novamente.');
+      }
+    }
+
+    function loginWithGoogle() {
+      // Adicione a lógica de login com o Google aqui
+      alert('Você clicou em Login com Google. Implemente a lógica de autenticação com o Google.');
+    }
+
+    function register() {
+      var newUsername = document.getElementById('newUsername').value;
+      var newPassword = document.getElementById('newPassword').value;
+
+      // Adicione a lógica de registro aqui
+      registeredUsers.push({ username: newUsername, password: newPassword });
+
+      alert('Registro bem-sucedido! Agora você pode fazer login.');
+
+      // Após o registro, redirecione para o formulário de login
+      showLoginForm();
+    }
+
+    function registerWithGoogle() {
+      // Adicione a lógica de registro com o Google aqui
+      alert('Você clicou em Conectar-se com Google. Implemente a lógica de autenticação com o Google para registro.');
+
+      // Após o registro, redirecione para o formulário de login
+      showLoginForm();
+    }
+  </script>
+
+</body>
+</html>

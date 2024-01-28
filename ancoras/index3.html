@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Layout de Compra</title>
+</head>
+<body>
+
+<!-- Seu conteúdo do site vai aqui -->
+
+<div class="product-container">
+    <div class="organizador">
+        <div class="product-slider">
+            <img src="../images/peça7.png" alt="Car Image 1" class="slide active">
+            <img src="./images/Chave Catraca Reversível Com 12 Soquetes Profissional Gm.jpg" alt="Car Image 2" class="slide">
+            <img src="./images/Jogo De Chave Catraca C_soquete Chevrolet Gm1140 1_2pol 12pç.jpg" alt="Car Image 3" class="slide">
+        </div>
+        <div class="thumbnail-container">
+            <button class="arrow prev" onclick="prevSlide()">&#9650;</button>
+
+            <img src="../images/peça7.png" alt="Thumbnail 1" onclick="showSlide(0)" class="thumbnail active">
+            <img src="./images/Chave Catraca Reversível Com 12 Soquetes Profissional Gm.jpg" alt="Thumbnail 2" onclick="showSlide(1)" class="thumbnail">
+            <img src="./images/Jogo De Chave Catraca C_soquete Chevrolet Gm1140 1_2pol 12pç.jpg" alt="Thumbnail 3" onclick="showSlide(2)" class="thumbnail">
+
+            <button class="arrow next" onclick="nextSlide()">&#9660;</button>
+        </div>
+    </div>
+    <div class="product-details">
+        <div class="parte-1">
+            <h2>Chave de catraca/3 catracas diferentes</h2>
+            <h1>R$00,00</h1>
+            <p>À vista no <span>PIX 15% OFF</span></p>
+        </div>
+
+        <div class="descrisao">
+            <p>
+                Explore o Poder da Versatilidade com Nossas Chaves de Catraca!
+                Apresentamos as nossas incríveis Chaves de Catraca, um conjunto projetado para revolucionar a sua experiência de trabalho. Com três catracas diferentes, oferecemos a combinação perfeita de força, durabilidade e versatilidade para atender a todas as suas necessidades.</p>
+        </div>
+
+        <div class="parte-2">
+            <span>R$ 00,00</span>
+            <p>Em até <span>3x de R$ 00,00</span> sem juros no cartão, ou então em <span>1x com até 5% OFF</span></p>
+        </div>
+        
+        <div class="parte-3">
+            <button class="buy-button">Comprar Agora</button>
+            <div id="carrinho">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+}
+
+.product-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.organizador{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+.slide{
+
+}
+
+.product-slider {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 4px;
+    width: 700px;
+}
+
+.product-slider > img {
+    border-radius: 8px;
+    display: none;
+    max-width: 100%;
+}
+
+.product-slider img.active {
+    display: block;
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.thumbnail.active {
+    border: 2px solid #fe1e0d;
+}
+
+.product-details {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-details h2 {
+    color: #333;
+}
+
+.product-details p {
+    color: #656;
+}
+
+.parte-1{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.parte-1 h1, .parte-1 h2, .parte-1 p{
+    margin: 0;
+}
+
+.parte-1 h1{
+    color: #fe1e0d;;
+}
+
+span{
+    color: #4c4a4a;
+    font-weight: bold;
+}
+
+.parte-2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.parte-3{
+    display: flex;
+    gap: 10px;
+}
+
+.buy-button, #carrinho {
+    background-color: #fe1e0d;;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.buy-button:hover, #carrinho:hover{
+    background-color: #18133b;
+}
+
+.arrow {
+    /* position: absolute; */
+    /* top: 50%; */
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fe1e0d;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: #18133b;
+}
+
+
+/* icons */
+.material-symbols-outlined{
+    color: #fff;
+
+    margin-top: 3px;
+}
+
+
